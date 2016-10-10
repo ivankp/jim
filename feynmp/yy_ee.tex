@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{feynmp-auto}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{fmffile}{yy_ee_}
+\begin{fmfgraph*}(200,90)
+  \fmfleft{y1,y2} \fmfright{ep,em}
+  \fmf{photon}{y1,v1}
+  \fmf{photon}{y2,v2}
+  \fmf{fermion}{ep,v1}
+  \fmf{fermion}{v1,v2}
+  \fmf{fermion}{v2,em}
+  \fmflabel{$\gamma_1$}{y1}
+  \fmflabel{$\gamma_2$}{y2}
+  \fmflabel{$e^{+}$}{ep}
+  \fmflabel{$e^{-}$}{em}
+\end{fmfgraph*}
+\end{fmffile}
+
+\end{document}

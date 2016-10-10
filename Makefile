@@ -20,3 +20,5 @@ clean:
 $(CLEAN): clean_%:
 	@rm -fv $*.aux $*.log $*.out $*.pdf
 
+hw2.pdf: feynmp/yy_ee.pdf
+
