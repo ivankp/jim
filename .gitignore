@@ -200,3 +200,6 @@ TSWLatexianTemp*
 *.1
 *.t1
 *.mp
+
+# Vim swap files
+*.swp
