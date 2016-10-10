@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{feynmp-auto}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{fmffile}{BH_pg_}
+\begin{fmfgraph*}(200,90)
+  \fmfleft{pi,yi} \fmfright{e1,e2,po}
+  \fmf{fermion}{pi,v1}
+  \fmf{photon}{yi,v2}
+  \fmf{fermion}{v1,v2}
+  \fmf{fermion}{v2,po}
+  \fmf{photon}{v1,v3}
+  \fmf{fermion}{v3,e1}
+  \fmf{fermion}{e2,v3}
+  \fmflabel{$p$}{pi}
+  \fmflabel{$\gamma$}{yi}
+  \fmflabel{$p$}{po}
+  \fmflabel{$e^{-}$}{e1}
+  \fmflabel{$e^{+}$}{e2}
+\end{fmfgraph*}
+\end{fmffile}
+
+\end{document}
