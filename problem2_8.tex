@@ -1,8 +1,66 @@
 \subsection{}
+The energy flux distribution of the CR is given by
+\begin{equation}
+  \frac{d\Phi}{dE} = A E^{-2.7}.
+\end{equation}
+
 There are
 \begin{equation}
   \int_{1\TeV}^{5\TeV} A E^{-2.7} dE \bigg/ \int_{5\TeV}^{\infty} A E^{-2.7} dE
   = \frac{1^{-1.7}-5^{-1.7}}{5^{-1.7}}
-  = 14.4
+  = \boxed{ 14.4 }
 \end{equation}
-times fewer CR above $5\TeV$ then between $1\TeV$ and $5\TeV$.
+times as many CR between $1\TeV$ and $5\TeV$ as there are above $5\TeV$.
+
+There are
+\begin{equation}
+  \frac{0.1^{-1.7}-1^{-1.7}}{5^{-1.7}}
+  = \boxed{ 758 }
+\end{equation}
+times as many CR between $0.1\TeV$ and $1\TeV$ as there are above $5\TeV$.
+
+\subsection{}
+Let $P(x>a|\left<x\right>=b)$ denote the probability of measuring $x$ to be greater than $a$ given that the true value of x is $b$. Then,
+\begin{equation}
+  P(x>a|\left<x\right>=b)
+  = \int_a^\infty \frac{1}{\sqrt{2\pi}\,\sigma}\ e^{-\frac{(x-b)^2}{2\sigma^2}} dx
+  = \frac{1}{2} \erfc\left(\frac{a-b}{\sqrt{2}\, \sigma}\right)
+\end{equation}
+
+Let $x = \log_{10}(E/\mathrm{eV})$.
+The $x$ flux distribution is
+\begin{equation}
+  \frac{d\Phi}{dx} = \frac{d\Phi}{dE} \frac{dE}{dx}.
+\end{equation}
+\begin{equation}
+  E = 10^x
+  \quad \Rightarrow \quad
+  \frac{dE}{dx} = \ln(10)\, 10^x
+  \quad \Rightarrow \quad
+  \frac{d\Phi}{dx} = A \left(10^x\right)^{-2.7} \ln(10)\, 10^x
+  = A \ln(10)\, 10^{-1.7x} = A' e^{-3.914 x}.
+\end{equation}
+
+The probability of measuring $x$ to be greater than $a$ given that the true value of $x$ is greater than $b$ is
+\begin{equation}
+  P\big(x>a|\left<x\right>>b\big)
+  = \int_b^\infty \frac{1}{2}\erfc\left(\frac{a-x}{\sqrt{2}\,\sigma}\right) e^{-3.914 x}\, dx
+  \bigg/ \int_b^\infty e^{-3.914 x}\, dx
+\end{equation}
+
+By Bayes' theorem,
+\begin{equation}
+  P(A|B) = \frac{P(B|A) P(A)}{\sum_i P(B|A_i) P(A_i)}.
+\end{equation}
+
+\begin{equation}
+  P\big(\left<x\right>>5\TeV|x>5\TeV\big)
+  = \frac{
+    P\big(x>5\TeV|\left<x\right>>5\TeV\big) P(\left<x\right>>5\TeV)
+  }{
+    \int_{1\TeV}^\infty P\big(x>5\TeV|\left<x\right>>b\big) P(\left<x\right>>b)\, db
+  }
+\end{equation}
+
+
+
