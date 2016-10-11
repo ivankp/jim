@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9244,        289]
-NotebookOptionsPosition[      8085,        246]
-NotebookOutlinePosition[      8421,        261]
-CellTagsIndexPosition[      8378,        258]
+NotebookDataLength[      9706,        297]
+NotebookOptionsPosition[      8337,        249]
+NotebookOutlinePosition[      8883,        269]
+CellTagsIndexPosition[      8840,        266]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,7 +30,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"-", "3.9143946580898774`"}]], "Output",
  CellChangeTimes->{3.685156345960504*^9, 3.685160403121758*^9, 
-  3.685161075193993*^9, 3.685161750459414*^9}]
+  3.685161075193993*^9, 3.685161750459414*^9, 3.6851851691977386`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -89,7 +89,7 @@ Cell[BoxData[
     RowBox[{"2", " ", "\[Pi]"}]], " ", "\[Sigma]"}]]], "Output",
  CellChangeTimes->{{3.685159542927114*^9, 3.685159557789345*^9}, 
    3.685159812604908*^9, 3.6851598799128313`*^9, 3.6851604032960567`*^9, 
-   3.685161075340942*^9, 3.685161750584586*^9}],
+   3.685161075340942*^9, 3.685161750584586*^9, 3.685185169494635*^9}],
 
 Cell[BoxData[
  RowBox[{"1.9947114020071635`", " ", 
@@ -101,7 +101,7 @@ Cell[BoxData[
       RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"]}]]}]], "Output",
  CellChangeTimes->{{3.685159542927114*^9, 3.685159557789345*^9}, 
    3.685159812604908*^9, 3.6851598799128313`*^9, 3.6851604032960567`*^9, 
-   3.685161075340942*^9, 3.685161750585683*^9}]
+   3.685161075340942*^9, 3.685161750584586*^9, 3.68518516949769*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -124,10 +124,10 @@ Cell[BoxData[
      RowBox[{"flux", "[", "x", "]"}]}], ",", 
     RowBox[{"{", 
      RowBox[{"\[Mu]", ",", 
-      RowBox[{"TeV", "[", "12", "]"}], ",", "\[Infinity]"}], "}"}]}], 
+      RowBox[{"TeV", "[", "1", "]"}], ",", "\[Infinity]"}], "}"}]}], 
    "]"}]}]], "Input",
  CellChangeTimes->{{3.6851596078931227`*^9, 3.685159750009844*^9}, {
-  3.685159884414795*^9, 3.685159892800146*^9}}],
+   3.685159884414795*^9, 3.685159892800146*^9}, 3.685185150779531*^9}],
 
 Cell["The join distribution", "Text",
  CellChangeTimes->{{3.685161560510129*^9, 3.685161566915525*^9}, {
@@ -172,9 +172,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.685159953840042*^9, 3.685160008971566*^9}, {
   3.6851610520402727`*^9, 3.6851610522531357`*^9}}],
 
-Cell[BoxData["5.144497168039521`"], "Output",
+Cell[BoxData["2.9202186017487333`"], "Output",
  CellChangeTimes->{3.68516001115828*^9, 3.6851604045947523`*^9, 
-  3.6851610765845623`*^9, 3.685161751838847*^9}]
+  3.6851610765845623`*^9, 3.685161751838847*^9, 3.685185171078733*^9}]
 }, Open  ]],
 
 Cell["The flux of all particles with measured energy above 5 TeV", "Text",
@@ -195,7 +195,7 @@ Cell[BoxData[
      RowBox[{"\[Mu]", ",", 
       RowBox[{"TeV", "[", "1", "]"}], ",", "\[Infinity]"}], "}"}], ",", 
     RowBox[{"PrecisionGoal", "\[Rule]", "12"}], ",", 
-    RowBox[{"MaxRecursion", "\[Rule]", "20"}], ",", 
+    RowBox[{"MaxRecursion", "\[Rule]", "50"}], ",", 
     RowBox[{"Method", "\[Rule]", 
      RowBox[{"{", 
       RowBox[{"GlobalAdaptive", ",", 
@@ -204,7 +204,7 @@ Cell[BoxData[
  CellChangeTimes->{
   3.6851600802655582`*^9, 3.68516011448528*^9, {3.6851602426996737`*^9, 
    3.685160245651066*^9}, {3.685160289556731*^9, 3.685160300380691*^9}, {
-   3.6851610542627583`*^9, 3.685161054441037*^9}}],
+   3.6851610542627583`*^9, 3.685161054441037*^9}, 3.685185491057969*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -219,12 +219,14 @@ ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
 \\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.685160082424488*^9, 3.685160117008739*^9, 
   3.685160249784196*^9, 3.68516030272257*^9, 3.6851604059219913`*^9, 
-  3.685161077905061*^9, 3.6851617531857033`*^9}],
+  3.685161077905061*^9, 3.6851617531857033`*^9, 3.685185172724917*^9, 
+  3.685185493110889*^9}],
 
-Cell[BoxData["10.29546767913969`"], "Output",
+Cell[BoxData["7.00000000001002`"], "Output",
  CellChangeTimes->{3.6851600827038383`*^9, 3.6851601468880033`*^9, 
   3.685160286192885*^9, 3.68516033929916*^9, 3.6851604437066593`*^9, 
-  3.685161115010665*^9, 3.6851617908327417`*^9}]
+  3.685161115010665*^9, 3.6851617908327417`*^9, 3.685185214102425*^9, 
+  3.685185533755114*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -240,12 +242,18 @@ Cell[BoxData[
  RowBox[{"A", "/", "B"}]], "Input",
  CellChangeTimes->{{3.685161057646344*^9, 3.6851610611218367`*^9}}],
 
-Cell[BoxData["0.4996856217093584`"], "Output",
- CellChangeTimes->{3.685161115121625*^9, 3.6851617909124317`*^9}]
+Cell[BoxData["0.4171740859635075`"], "Output",
+ CellChangeTimes->{3.685161115121625*^9, 3.6851617909124317`*^9, 
+  3.685185214330351*^9}]
 }, Open  ]]
 },
 WindowSize->{677, 718},
 WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->"/home/ivanp/jim/problem2_8_b.pdf"},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (December 10, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -262,34 +270,34 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 197, 5, 37, "Input"],
-Cell[780, 29, 174, 3, 32, "Output"]
+Cell[780, 29, 198, 3, 32, "Output"]
 }, Open  ]],
-Cell[969, 35, 332, 8, 32, "Input"],
-Cell[1304, 45, 178, 5, 32, "Input"],
+Cell[993, 35, 332, 8, 32, "Input"],
+Cell[1328, 45, 178, 5, 32, "Input"],
 Cell[CellGroupData[{
-Cell[1507, 54, 750, 20, 99, "Input"],
-Cell[2260, 76, 535, 15, 74, "Output"],
-Cell[2798, 93, 425, 10, 38, "Output"]
+Cell[1531, 54, 750, 20, 99, "Input"],
+Cell[2284, 76, 557, 15, 74, "Output"],
+Cell[2844, 93, 446, 10, 38, "Output"]
 }, Open  ]],
-Cell[3238, 106, 274, 7, 33, "Text"],
-Cell[3515, 115, 492, 14, 32, "Input"],
-Cell[4010, 131, 154, 2, 33, "Text"],
-Cell[4167, 135, 451, 12, 32, "Input"],
-Cell[4621, 149, 205, 5, 55, "Text"],
+Cell[3305, 106, 274, 7, 33, "Text"],
+Cell[3582, 115, 514, 14, 32, "Input"],
+Cell[4099, 131, 154, 2, 33, "Text"],
+Cell[4256, 135, 451, 12, 32, "Input"],
+Cell[4710, 149, 205, 5, 55, "Text"],
 Cell[CellGroupData[{
-Cell[4851, 158, 521, 14, 32, "Input"],
-Cell[5375, 174, 159, 2, 32, "Output"]
+Cell[4940, 158, 521, 14, 32, "Input"],
+Cell[5464, 174, 182, 2, 32, "Output"]
 }, Open  ]],
-Cell[5549, 179, 140, 1, 33, "Text"],
+Cell[5661, 179, 140, 1, 33, "Text"],
 Cell[CellGroupData[{
-Cell[5714, 184, 893, 22, 77, "Input"],
-Cell[6610, 208, 719, 13, 77, "Message"],
-Cell[7332, 223, 232, 3, 32, "Output"]
+Cell[5826, 184, 915, 22, 77, "Input"],
+Cell[6744, 208, 766, 14, 77, "Message"],
+Cell[7513, 224, 278, 4, 32, "Output"]
 }, Open  ]],
-Cell[7579, 229, 233, 5, 55, "Text"],
+Cell[7806, 231, 233, 5, 55, "Text"],
 Cell[CellGroupData[{
-Cell[7837, 238, 117, 2, 32, "Input"],
-Cell[7957, 242, 112, 1, 32, "Output"]
+Cell[8064, 240, 117, 2, 32, "Input"],
+Cell[8184, 244, 137, 2, 32, "Output"]
 }, Open  ]]
 }
 ]
