@@ -1,0 +1,298 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9244,        289]
+NotebookOptionsPosition[      8085,        246]
+NotebookOutlinePosition[      8421,        261]
+CellTagsIndexPosition[      8378,        258]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"c", "=", 
+  RowBox[{"Log", "[", 
+   SuperscriptBox["10", 
+    RowBox[{"-", "1.7"}]], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6851563173664627`*^9, 3.6851563335797043`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "3.9143946580898774`"}]], "Output",
+ CellChangeTimes->{3.685156345960504*^9, 3.685160403121758*^9, 
+  3.685161075193993*^9, 3.685161750459414*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TeV", "[", "x_", "]"}], ":=", 
+  RowBox[{"N", "[", 
+   RowBox[{
+    RowBox[{"Log10", "[", "x", "]"}], "+", "12"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.685156347395052*^9, 3.685156369762416*^9}, {
+  3.685156465291266*^9, 3.685156468761488*^9}, {3.685156500756331*^9, 
+  3.685156533729455*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"flux", "[", "x_", "]"}], ":=", 
+  RowBox[{"Exp", "[", 
+   RowBox[{"c", " ", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{3.685159422127674*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"G1", "[", 
+   RowBox[{"x_", ",", "\[Mu]_", ",", "\[Sigma]_"}], "]"}], ":=", 
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"NormalDistribution", "[", 
+     RowBox[{"\[Mu]", ",", "\[Sigma]"}], "]"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"G", "[", 
+   RowBox[{"x_", ",", "\[Mu]_"}], "]"}], ":=", 
+  RowBox[{"G1", "[", 
+   RowBox[{"x", ",", "\[Mu]", ",", "0.2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"G1", "[", 
+  RowBox[{"x", ",", "\[Mu]", ",", "\[Sigma]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"G", "[", 
+  RowBox[{"x", ",", "\[Mu]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.685159508332309*^9, 3.68515955717698*^9}, {
+  3.6851598067512217`*^9, 3.685159879009088*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"-", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+     RowBox[{"2", " ", 
+      SuperscriptBox["\[Sigma]", "2"]}]]}]], 
+  RowBox[{
+   SqrtBox[
+    RowBox[{"2", " ", "\[Pi]"}]], " ", "\[Sigma]"}]]], "Output",
+ CellChangeTimes->{{3.685159542927114*^9, 3.685159557789345*^9}, 
+   3.685159812604908*^9, 3.6851598799128313`*^9, 3.6851604032960567`*^9, 
+   3.685161075340942*^9, 3.685161750584586*^9}],
+
+Cell[BoxData[
+ RowBox[{"1.9947114020071635`", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "12.5`"}], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"]}]]}]], "Output",
+ CellChangeTimes->{{3.685159542927114*^9, 3.685159557789345*^9}, 
+   3.685159812604908*^9, 3.6851598799128313`*^9, 3.6851604032960567`*^9, 
+   3.685161075340942*^9, 3.685161750585683*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Distribution of particles with measured energy ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.6851615107662*^9, 3.685161552969348*^9}, {
+  3.685161680227714*^9, 3.685161681725874*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Px", "[", "x_", "]"}], ":=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"G", "[", 
+      RowBox[{"x", ",", "\[Mu]"}], "]"}], "*", 
+     RowBox[{"flux", "[", "x", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Mu]", ",", 
+      RowBox[{"TeV", "[", "12", "]"}], ",", "\[Infinity]"}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6851596078931227`*^9, 3.685159750009844*^9}, {
+  3.685159884414795*^9, 3.685159892800146*^9}}],
+
+Cell["The join distribution", "Text",
+ CellChangeTimes->{{3.685161560510129*^9, 3.685161566915525*^9}, {
+  3.685161688003148*^9, 3.6851616922623997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"joint", "[", 
+   RowBox[{"x_", ",", "\[Mu]_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"G", "[", 
+    RowBox[{"x", ",", "\[Mu]"}], "]"}], "*", 
+   RowBox[{
+    RowBox[{"flux", "[", "x", "]"}], "/", 
+    RowBox[{"Px", "[", "x", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.685159567800692*^9, 3.685159598975458*^9}, {
+  3.685159788506907*^9, 3.6851597892388287`*^9}, {3.6851598992117777`*^9, 
+  3.6851599300524273`*^9}}],
+
+Cell["\<\
+Flux of particles with measured energy above 5 TeV whose energy was really \
+above 5 TeV\
+\>", "Text",
+ CellChangeTimes->{{3.6851615975745363`*^9, 3.68516163951411*^9}, 
+   3.685161677628744*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", "=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"joint", "[", 
+     RowBox[{"x", ",", "\[Mu]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"TeV", "[", "5", "]"}], ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Mu]", ",", 
+      RowBox[{"TeV", "[", "5", "]"}], ",", "\[Infinity]"}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.685159953840042*^9, 3.685160008971566*^9}, {
+  3.6851610520402727`*^9, 3.6851610522531357`*^9}}],
+
+Cell[BoxData["5.144497168039521`"], "Output",
+ CellChangeTimes->{3.68516001115828*^9, 3.6851604045947523`*^9, 
+  3.6851610765845623`*^9, 3.685161751838847*^9}]
+}, Open  ]],
+
+Cell["The flux of all particles with measured energy above 5 TeV", "Text",
+ CellChangeTimes->{{3.685161647139793*^9, 3.685161653319829*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"joint", "[", 
+     RowBox[{"x", ",", "\[Mu]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"TeV", "[", "5", "]"}], ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Mu]", ",", 
+      RowBox[{"TeV", "[", "1", "]"}], ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"PrecisionGoal", "\[Rule]", "12"}], ",", 
+    RowBox[{"MaxRecursion", "\[Rule]", "20"}], ",", 
+    RowBox[{"Method", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"GlobalAdaptive", ",", 
+       RowBox[{"MaxErrorIncreases", "\[Rule]", "10000"}]}], "}"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.6851600802655582`*^9, 3.68516011448528*^9, {3.6851602426996737`*^9, 
+   3.685160245651066*^9}, {3.685160289556731*^9, 3.685160300380691*^9}, {
+   3.6851610542627583`*^9, 3.685161054441037*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "slwcon"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Numerical integration converging too slowly; suspect one \
+of the following: singularity, value of the integration is 0, highly \
+oscillatory integrand, or WorkingPrecision too small. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NIntegrate/slwcon\\\", ButtonNote -> \
+\\\"NIntegrate::slwcon\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.685160082424488*^9, 3.685160117008739*^9, 
+  3.685160249784196*^9, 3.68516030272257*^9, 3.6851604059219913`*^9, 
+  3.685161077905061*^9, 3.6851617531857033`*^9}],
+
+Cell[BoxData["10.29546767913969`"], "Output",
+ CellChangeTimes->{3.6851600827038383`*^9, 3.6851601468880033`*^9, 
+  3.685160286192885*^9, 3.68516033929916*^9, 3.6851604437066593`*^9, 
+  3.685161115010665*^9, 3.6851617908327417`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Fraction of particles with measured energy above 5 TeV whose energy was \
+really above 5 TeV\
+\>", "Text",
+ CellChangeTimes->{{3.685161670280723*^9, 3.6851616730056667`*^9}, {
+  3.685161703553555*^9, 3.685161705366111*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", "/", "B"}]], "Input",
+ CellChangeTimes->{{3.685161057646344*^9, 3.6851610611218367`*^9}}],
+
+Cell[BoxData["0.4996856217093584`"], "Output",
+ CellChangeTimes->{3.685161115121625*^9, 3.6851617909124317`*^9}]
+}, Open  ]]
+},
+WindowSize->{677, 718},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 197, 5, 37, "Input"],
+Cell[780, 29, 174, 3, 32, "Output"]
+}, Open  ]],
+Cell[969, 35, 332, 8, 32, "Input"],
+Cell[1304, 45, 178, 5, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1507, 54, 750, 20, 99, "Input"],
+Cell[2260, 76, 535, 15, 74, "Output"],
+Cell[2798, 93, 425, 10, 38, "Output"]
+}, Open  ]],
+Cell[3238, 106, 274, 7, 33, "Text"],
+Cell[3515, 115, 492, 14, 32, "Input"],
+Cell[4010, 131, 154, 2, 33, "Text"],
+Cell[4167, 135, 451, 12, 32, "Input"],
+Cell[4621, 149, 205, 5, 55, "Text"],
+Cell[CellGroupData[{
+Cell[4851, 158, 521, 14, 32, "Input"],
+Cell[5375, 174, 159, 2, 32, "Output"]
+}, Open  ]],
+Cell[5549, 179, 140, 1, 33, "Text"],
+Cell[CellGroupData[{
+Cell[5714, 184, 893, 22, 77, "Input"],
+Cell[6610, 208, 719, 13, 77, "Message"],
+Cell[7332, 223, 232, 3, 32, "Output"]
+}, Open  ]],
+Cell[7579, 229, 233, 5, 55, "Text"],
+Cell[CellGroupData[{
+Cell[7837, 238, 117, 2, 32, "Input"],
+Cell[7957, 242, 112, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

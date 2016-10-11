@@ -20,47 +20,56 @@ There are
 times as many CR between $0.1\TeV$ and $1\TeV$ as there are above $5\TeV$.
 
 \subsection{}
-Let $P(x>a|\left<x\right>=b)$ denote the probability of measuring $x$ to be greater than $a$ given that the true value of x is $b$. Then,
-\begin{equation}
-  P(x>a|\left<x\right>=b)
-  = \int_a^\infty \frac{1}{\sqrt{2\pi}\,\sigma}\ e^{-\frac{(x-b)^2}{2\sigma^2}} dx
-  = \frac{1}{2} \erfc\left(\frac{a-b}{\sqrt{2}\, \sigma}\right)
-\end{equation}
+\renewcommand{\x}{\left<x\right>}
+\renewcommand{\P}[1]{P\left(#1\right)}
 
-Let $x = \log_{10}(E/\mathrm{eV})$.
+$x \equiv \log_{10}(E/\mathrm{eV})$.
 The $x$ flux distribution is
 \begin{equation}
   \frac{d\Phi}{dx} = \frac{d\Phi}{dE} \frac{dE}{dx}.
 \end{equation}
 \begin{equation}
   E = 10^x
-  \quad \Rightarrow \quad
+  \ \Rightarrow \
   \frac{dE}{dx} = \ln(10)\, 10^x
-  \quad \Rightarrow \quad
+  \ \Rightarrow \
   \frac{d\Phi}{dx} = A \left(10^x\right)^{-2.7} \ln(10)\, 10^x
   = A \ln(10)\, 10^{-1.7x} = A' e^{-3.914 x}.
 \end{equation}
 
-The probability of measuring $x$ to be greater than $a$ given that the true value of $x$ is greater than $b$ is
+% To normalize the distribution, we compute the integral
+% with the lower limit $\log_{10}(1\TeV/\mathrm{eV}) = 12$.
+% \begin{equation}
+%   {A'}^{-1} = \int_{12}^\infty\! e^{-3.914 x}\, dx
+%   = \num{1.02e-21}
+%   \quad \Rightarrow \quad
+%   A' = \num{9.83e20}.
+% \end{equation}
+
+
+Let $x$ be the measured value of energy, and $\x$ be the true value.
+Then, by Bayes' theorem,
 \begin{equation}
-  P\big(x>a|\left<x\right>>b\big)
-  = \int_b^\infty \frac{1}{2}\erfc\left(\frac{a-x}{\sqrt{2}\,\sigma}\right) e^{-3.914 x}\, dx
-  \bigg/ \int_b^\infty e^{-3.914 x}\, dx
+  \P{\x|x} = \frac{\P{x|\x} \P{\x}}{\P{x}}.
 \end{equation}
 
-By Bayes' theorem,
 \begin{equation}
-  P(A|B) = \frac{P(B|A) P(A)}{\sum_i P(B|A_i) P(A_i)}.
+  \P{\x} = \num{9.83e20}\times e^{-3.914 x},
+\end{equation}
+\begin{equation}
+  \P{x|\x} = \frac{1}{\sqrt{2\pi}\,\sigma}\ e^{-\frac{(x-\x)^2}{2\sigma^2}},
+\end{equation}
+\begin{equation}
+  \P{x} = \int_{1\TeV}^\infty \P{x|\x} \P{\x}\, d\x
 \end{equation}
 
+The flux of particles with measured energy greater than $x$ that had true energy greater than $\x$ is the CDF of the joint distribution $\P{\x|x}$.
 \begin{equation}
-  P\big(\left<x\right>>5\TeV|x>5\TeV\big)
-  = \frac{
-    P\big(x>5\TeV|\left<x\right>>5\TeV\big) P(\left<x\right>>5\TeV)
-  }{
-    \int_{1\TeV}^\infty P\big(x>5\TeV|\left<x\right>>b\big) P(\left<x\right>>b)\, db
-  }
+  \P{\x>a|x>b} = \int_a^\infty \int_b^\infty \P{\x|x}\, dx\, d\x.
 \end{equation}
 
-
+The fraction of CRs measured as above $5\TeV$, that are actually above $5\TeV$, is then
+\begin{equation}
+  \P{\x>5\TeV|x>5\TeV} / \P{\x>1\TeV|x>5\TeV} = \boxed{ 0.50 }.
+\end{equation}
 
