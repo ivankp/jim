@@ -1,0 +1,49 @@
+The Larmor radius is given by
+\begin{equation}
+  r = \frac{mv}{qB}
+\end{equation}
+
+Substituting $mv = 1\TeV/c$, $q = e$, and $B = 5~\mathrm{kG}$,
+\begin{equation}
+  r = \frac{
+    \SI{1e12}{\electronvolt} / \SI{3e8}{\meter\per\second}
+  }{
+    \SI{1.6e-19}{\coulomb}\times\SI{5e3}{\gauss}
+  }
+  = \frac{
+    \num{1e12}\times\SI{1.6e-15}{\meter}
+  }{
+    \num{1.6e-19}\times\num{5e3}\times\num{3e8}
+  }
+  = \SI{6671}{\meter}
+\end{equation}
+
+When the sagitta is small in comparison to the radius, as is the case here, it may be approximated by the formula
+\begin{equation}
+  s \approx \frac{l^2}{2r},
+\end{equation}
+where $s$ is the sagitta, $r$ is the radius of curvature, and $l$ is half the length of the chord.
+\begin{equation}
+  \frac{\delta r}{r}
+  = \sqrt{ \left(2\frac{\delta l}{l}\right)^2 + \left(\frac{\delta s}{s}\right)^2 }
+  = \sqrt{ 4\frac{{\delta l}^2}{l^2} + 4\frac{{\delta l}^2}{l^4/r^2} }
+  = 2\frac{\delta l}{l} \sqrt{ 1 + \frac{r^2}{l^2} }
+  \approx 2\frac{\delta l}{l} \frac{r}{l}
+\end{equation}
+\begin{equation}
+  \therefore \delta l = \half \left(\frac{l}{r}\right)^2 \delta r
+\end{equation}
+
+If the momentum is to be measured with $1\%$ accuracy,
+\begin{equation}
+  0.01 = \frac{\delta mv}{mv} = \frac{\delta r}{r} = \frac{2r}{l^2} \delta l.
+\end{equation}
+
+For $l\approx\SI{1}{\meter}$,
+\begin{equation}
+  \delta l = 0.01 \times \frac{(\SI{1}{\meter})^2}{2\times\SI{6671}{\meter}}
+  = \SI{7.5e-7}{\meter} = \boxed{ \SI{750}{\nano\meter} }
+\end{equation}
+
+\red{what technology}
+

@@ -1,0 +1,24 @@
+\begin{equation}
+  v = \frac{d}{t} \quad \Rightarrow \quad
+  \frac{\delta v}{v} = \sqrt{ \left(\frac{\delta d}{d}\right)^2 + \left(\frac{\delta t}{t}\right)^2 }
+\end{equation}
+
+We may as well ignore $\delta d/d$, because the fractional uncertainty of high measurement is usually much better then that of time. So,
+\begin{equation}
+  \frac{\delta v}{v} \approx \frac{\delta t}{t}
+\end{equation}
+
+For a particle traveling at nearly the speed of light,
+\begin{equation}
+  \delta t \approx t \frac{\delta v}{v} \approx \frac{d}{c} \frac{\delta v}{v}
+\end{equation}
+
+To measure the particle's velocity to $5\%$,
+\begin{equation}
+  \delta t
+  = \frac{\SI{1}{\meter}}{\SI{3e8}{\meter\per\second}} \times 0.05
+  = \SI{1.7e-10}{\second} = \boxed{ \SI{0.17}{\nano\second} }
+\end{equation}
+
+\red{How accurate to tell an up‐moving particle from a down‐moving by 10 standard deviations?}
+
